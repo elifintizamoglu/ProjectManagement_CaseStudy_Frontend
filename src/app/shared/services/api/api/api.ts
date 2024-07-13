@@ -1,0 +1,13 @@
+export * from './authentication.service';
+import { AuthenticationService } from './authentication.service';
+export * from './authentication.serviceInterface';
+export * from './projects-controller.service';
+import { ProjectsControllerService } from './projects-controller.service';
+export * from './projects-controller.serviceInterface';
+export * from './tasks-controller.service';
+import { TasksControllerService } from './tasks-controller.service';
+export * from './tasks-controller.serviceInterface';
+export * from './users-controller.service';
+import { UsersControllerService } from './users-controller.service';
+export * from './users-controller.serviceInterface';
+export const APIS = [AuthenticationService, ProjectsControllerService, TasksControllerService, UsersControllerService];

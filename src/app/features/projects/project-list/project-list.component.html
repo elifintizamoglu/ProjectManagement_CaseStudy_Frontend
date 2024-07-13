@@ -1,1 +1,25 @@
-<p>project-list works!</p>,
+<p>project-list works!</p>
+<div *ngIf="projects && projects.length > 0; else noProjects">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.id }}</td>
+          <td>{{ project.name }}</td>
+          <td>{{ project.startDate }}</td>
+          <td>{{ project.endDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noProjects>
+    <p>No projects available.</p>
+  </ng-template>
+  
