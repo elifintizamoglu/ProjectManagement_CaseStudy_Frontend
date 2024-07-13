@@ -1,0 +1,16 @@
+<div class="min-vh-100 d-flex flex-column">
+    <app-navbar [title]="navTitle" [navItems]="navItems" [endContentTemplate]="navbarEndContent">
+    </app-navbar>
+  
+    <main>
+      <ng-content></ng-content>
+    </main>
+  
+    <app-footer class="bg-dark"></app-footer>
+  </div>
+  
+  <ng-template #navbarEndContent>
+    <button [routerLink] = "['/login']" class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+      Login
+    </button>
+  </ng-template>
