@@ -1,52 +1,29 @@
-:host {
-  display: block;
-}
-
 footer {
   background-color: #343a40;
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 1000; // Önde görünmesi için yüksek bir z-index değeri ekleyin
 }
-
 h6 {
   color: #ffce00;
   text-align: left;
 }
-
 .social-btn {
   color: white !important;
 }
-
 .social-btn:hover {
   color: #ccc !important;
 }
-
 .text-body {
   color: white !important;
 }
-
 .list-unstyled {
   list-style: none;
   padding: 0;
 }
-
 .list-unstyled li {
   margin-bottom: 0.5rem;
 }
-
 p {
   text-align: left;
-}
-
-/* Body ve HTML için minimum yüksekliği %100 olarak ayarlayın */
-body, html {
-  min-height: 100%;
-  position: relative;
-  margin: 0;
-  padding-bottom: 3rem; // Footer yüksekliğine eşit
 }
