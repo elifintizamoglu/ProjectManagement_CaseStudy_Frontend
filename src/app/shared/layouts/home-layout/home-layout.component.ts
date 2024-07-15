@@ -21,7 +21,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class HomeLayoutComponent { 
   
-  navTitle: NavTitle = { text: 'Project Management', routerLink: '/' };
+  navTitle: NavTitle = { text: 'Project Management', routerLink: '/projects' };
 
   navItems: NavItem[] = [
     { label: 'Projects', link: '/projects' },

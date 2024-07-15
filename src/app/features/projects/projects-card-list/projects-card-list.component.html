@@ -1,0 +1,17 @@
+<div *ngIf="projects.length > 0; else noProjectsFound">
+  <div class="row">
+    <div class="col-6 mb-3"
+      *ngFor="let project of projects">
+      <app-card [title]="project.name!" [text]=" 'Start Date: ' + project.startDate + ' ' + 'End Date: ' + project.endDate + ' '"
+        buttonLabel="See Details"
+        (buttonClick)="onSeeDetailsButtonClick(project.id!)"></app-card>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #noProjectsFound>
+  <div class="alert alert-warning alert-center" role="alert">
+    No projects found with selected filters.
+  </div>
+</ng-template>
