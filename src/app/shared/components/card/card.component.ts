@@ -15,6 +15,8 @@ export class CardComponent {
   
   @Input() title!: string;
   @Input() text!: string;
-  @Input() buttonLabel!: string;
-  @Output() buttonClick = new EventEmitter();
+  @Input() button1Label!: string;
+  @Input() button2Label?: string;
+  @Output() button1Click = new EventEmitter();
+  @Output() button2Click = new EventEmitter();
 }

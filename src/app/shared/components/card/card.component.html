@@ -1,9 +1,13 @@
 <div class="card" style="margin-bottom: 5px;">
     <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">{{text}}</p>
-        <div class="button-container">
-            <button class="btn btn-primary" (click)="buttonClick.emit()"> {{ buttonLabel }}</button>
-        </div>
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ text }}</p>
+      <div class="button-container">
+        <button class="btn btn-primary" (click)="button1Click.emit()">{{ button1Label }}</button>
+        <ng-container *ngIf="button2Label">
+          <button class="btn btn-secondary" (click)="button2Click.emit()">{{ button2Label }}</button>
+        </ng-container>
+      </div>
     </div>
-</div>
+  </div>
+  

@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col-6 mb-3"
       *ngFor="let project of projects">
-      <app-card [title]="project.name!" [text]=" 'Start Date: ' + [project.startDate | date] + ' ' + 'End Date: ' + [project.endDate | date] + ' '"
-        buttonLabel="See Tasks"
-        (buttonClick)="onSeeTasksButtonClick(project.id!)"></app-card>
+      <app-card [title]="project.name!" 
+      [text]=" 'Start Date: ' + [project.startDate | date] + ' ' + 'End Date: ' + [project.endDate | date] + ' '"
+        button1Label="See Tasks"
+        (button1Click)="onSeeTasksButtonClick(project.id!)"></app-card>
     </div>
   </div>
 
