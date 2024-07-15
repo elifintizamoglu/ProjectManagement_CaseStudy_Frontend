@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { GetProjectByIdResponse, GetTasksByProjectIdResponse, ProjectsControllerService, TasksControllerService } from '../../../shared/services/api';
 import { HomeLayoutComponent } from '../../../shared/layouts/home-layout/home-layout.component';
 import { CardComponent } from '../../../shared/components/card/card.component';
 import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../../token/token.service';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
+
 
 @Component({
   selector: 'app-task-list',
@@ -14,6 +17,7 @@ import { ToastrService } from 'ngx-toastr';
     HomeLayoutComponent,
     CardComponent,
     RouterModule,
+    ButtonComponent,
   ],
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss'],
@@ -27,10 +31,12 @@ export class TaskListComponent implements OnInit {
   completedTasks: GetTasksByProjectIdResponse[] = [];
 
   constructor(private route: ActivatedRoute,
-              private projectService: ProjectsControllerService,
-              private tasksService: TasksControllerService,
-              private change: ChangeDetectorRef,
-            private toastr: ToastrService) { }
+    private projectService: ProjectsControllerService,
+    private tasksService: TasksControllerService,
+    private change: ChangeDetectorRef,
+    private toastr: ToastrService,
+    private tokenService: TokenService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getProjectIdFromRoute();
@@ -62,11 +68,11 @@ export class TaskListComponent implements OnInit {
   }
 
   updateTask(taskId: number) {
-    
+
   }
 
   deleteTask(taskId: number) {
-    this.tasksService.deleteTaskById({id:taskId}).subscribe({
+    this.tasksService.deleteTaskById({ id: taskId }).subscribe({
       next: () => {
         this.toastr.success('Task deleted succesfully.');
       },
@@ -79,7 +85,15 @@ export class TaskListComponent implements OnInit {
       },
       complete: () => {
         this.getTasksByProjectId(this.projectId);
-      } 
+      }
     })
+  }
+
+  goToAddTaskPage() {
+    if (this.tokenService.isLoggedIn()) {
+      this.router.navigate(['project/' + this.projectId + '/tasks/create']);
+    } else {
+      this.toastr.warning('Please login to be able to add a task.');
+    }
   }
 }

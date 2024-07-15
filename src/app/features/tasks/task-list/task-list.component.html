@@ -1,52 +1,33 @@
-<app-home-layout>
-  <div class="d-flex justify-content-between align-items-center">
-    <h3>{{ project?.name }}</h3>
-    <p>Start Date: {{ project?.startDate | date }}</p>
-    <p>End Date: {{ project?.endDate | date }}</p>
-    <button type="button" class="btn btn-secondary" [routerLink]="['']">
-      <i class="fas fa-arrow-left"></i> Back
+<div class="d-flex justify-content-between align-items-center">
+  <h3>{{ project?.name }}</h3>
+  <p>Start Date: {{ project?.startDate | date }}</p>
+  <p>End Date: {{ project?.endDate | date }}</p>
+  <button type="button" class="btn btn-secondary" [routerLink]="['']">
+    <i class="fas fa-arrow-left"></i> Back
   </button>
-  </div>
+  <app-button (click)="goToAddTaskPage()">Add</app-button>
+</div>
 
-  <div class="task-columns">
-    <div class="task-column" style="background-color: pink;">
-      <h4>New</h4>
-      <div *ngFor="let task of newTasks">
-        <app-card
-          [title]="task.title!"
-          [text]="task.description!"
-          button1Label="Update"
-          button2Label="Delete"
-          (button1Click)="updateTask(task.id!)"
-          (button2Click)="deleteTask(task.id!)"
-        ></app-card>
-      </div>
-    </div>
-    <div class="task-column" style="background-color: lightyellow;">
-      <h4>In Progress</h4>
-      <div *ngFor="let task of inProgressTasks">
-        <app-card
-          [title]="task.title!"
-          [text]="task.description!"
-          button1Label="Update"
-          button2Label="Delete"
-          (button1Click)="updateTask(task.id!)"
-          (button2Click)="deleteTask(task.id!)"
-        ></app-card>
-      </div>
-    </div>
-    <div class="task-column" style="background-color: lightgreen;">
-      <h4>Completed</h4>
-      <div *ngFor="let task of completedTasks">
-        <app-card
-          [title]="task.title!"
-          [text]="task.description!"
-          button1Label="Update"
-          button2Label="Delete"
-          (button1Click)="updateTask(task.id!)"
-          (button2Click)="deleteTask(task.id!)"
-        ></app-card>
-      </div>
+<div class="task-columns">
+  <div class="task-column" style="background-color: pink;">
+    <h4>New</h4>
+    <div *ngFor="let task of newTasks">
+      <app-card [title]="task.title!" [text]="task.description!" button1Label="Update" button2Label="Delete"
+        (button1Click)="updateTask(task.id!)" (button2Click)="deleteTask(task.id!)"></app-card>
     </div>
   </div>
-</app-home-layout>
+  <div class="task-column" style="background-color: lightyellow;">
+    <h4>In Progress</h4>
+    <div *ngFor="let task of inProgressTasks">
+      <app-card [title]="task.title!" [text]="task.description!" button1Label="Update" button2Label="Delete"
+        (button1Click)="updateTask(task.id!)" (button2Click)="deleteTask(task.id!)"></app-card>
+    </div>
+  </div>
+  <div class="task-column" style="background-color: lightgreen;">
+    <h4>Completed</h4>
+    <div *ngFor="let task of completedTasks">
+      <app-card [title]="task.title!" [text]="task.description!" button1Label="Update" button2Label="Delete"
+        (button1Click)="updateTask(task.id!)" (button2Click)="deleteTask(task.id!)"></app-card>
+    </div>
+  </div>
+</div>

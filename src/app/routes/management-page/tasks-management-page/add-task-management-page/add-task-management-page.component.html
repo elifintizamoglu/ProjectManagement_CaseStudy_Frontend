@@ -1,0 +1,11 @@
+<app-home-layout>
+    <div class="m-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Add Task</h3>
+            <button type="button" class="btn btn-secondary" (click)="goBackToTasks()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+        </div>
+        <app-add-task-form [projectId]="projectId"></app-add-task-form>
+    </div>
+</app-home-layout>
