@@ -28,6 +28,7 @@ model/get-all-tasks-response.ts
 model/get-all-users-response.ts
 model/get-project-by-id-response.ts
 model/get-task-by-id-response.ts
+model/get-tasks-by-project-id-response.ts
 model/get-user-by-email-response.ts
 model/get-user-by-id-response.ts
 model/models.ts

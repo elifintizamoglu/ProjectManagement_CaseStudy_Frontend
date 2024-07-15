@@ -17,6 +17,7 @@ import { CreateTaskRequest } from '../model/models';
 import { CreateTaskResponse } from '../model/models';
 import { GetAllTasksResponse } from '../model/models';
 import { GetTaskByIdResponse } from '../model/models';
+import { GetTasksByProjectIdResponse } from '../model/models';
 import { UpdateTaskRequest } from '../model/models';
 import { UpdateTaskResponse } from '../model/models';
 import { UpdateUserById400Response } from '../model/models';
@@ -35,6 +36,10 @@ export interface DeleteTaskByIdRequestParams {
 
 export interface GetTaskByIdRequestParams {
     id: number;
+}
+
+export interface GetTasksByProjectIdRequestParams {
+    projectId: number;
 }
 
 export interface UpdateTaskByIdRequestParams {
@@ -73,6 +78,13 @@ export interface TasksControllerServiceInterface {
 * @param requestParameters
      */
     getTaskById(requestParameters: GetTaskByIdRequestParams, extraHttpRequestParams?: any): Observable<GetTaskByIdResponse>;
+
+    /**
+     * 
+     * 
+* @param requestParameters
+     */
+    getTasksByProjectId(requestParameters: GetTasksByProjectIdRequestParams, extraHttpRequestParams?: any): Observable<Array<GetTasksByProjectIdResponse>>;
 
     /**
      * 

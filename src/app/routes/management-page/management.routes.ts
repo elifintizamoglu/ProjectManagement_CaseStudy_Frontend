@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 import { ProjectsManagementPageComponent } from './projects-management-page/projects-management-page.component';
-import { ProjectDetailComponent } from '../../features/projects/project-detail/project-detail.component';
 import { AddProjectManagementPageComponent } from './projects-management-page/add-project-management-page/add-project-management-page.component';
 import { userGuard } from '../../shared/guards/user.guard';
+import { TaskListComponent } from '../../features/tasks/task-list/task-list.component';
 
 
 export const managementRoutes: Routes = [
     {
-        path: 'projects', // localhost:4200/projects
+        path: '', // localhost:4200/projects
         component: ProjectsManagementPageComponent,
     },
     {
@@ -16,8 +16,8 @@ export const managementRoutes: Routes = [
         component: AddProjectManagementPageComponent,
     },
     {
-        path: 'project/detail/:projectId', // localhost:4200/project/detail/1
-        component: ProjectDetailComponent,  
+        path: 'project/:projectId/tasks', // localhost:4200/project/detail/1
+        component: TaskListComponent,  
     },
     
 ];

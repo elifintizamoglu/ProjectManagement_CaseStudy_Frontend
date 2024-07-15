@@ -40,7 +40,7 @@ export class LoginFormComponent {
     this.authService.authenticate(this.authRequest).subscribe({
       next: (res) => {
         this.tokenService.token = res.token as string;
-        this.router.navigate(['/projects']);
+        this.router.navigate(['']);
       },
       error:(err) => {
         console.log(err);

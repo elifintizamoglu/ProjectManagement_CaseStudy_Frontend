@@ -12,6 +12,7 @@ export * from './get-all-tasks-response';
 export * from './get-all-users-response';
 export * from './get-project-by-id-response';
 export * from './get-task-by-id-response';
+export * from './get-tasks-by-project-id-response';
 export * from './get-user-by-email-response';
 export * from './get-user-by-id-response';
 export * from './registration-request';

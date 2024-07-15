@@ -68,7 +68,7 @@ export class AddProjectFormComponent implements OnInit {
         this.form.reset();
         this.change.markForCheck();
         setTimeout(() => {
-          this.router.navigate(['/projects']);
+          this.router.navigate(['']);
         }, 1500);
       },
       error: (error) => {

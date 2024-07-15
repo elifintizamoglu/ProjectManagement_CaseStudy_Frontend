@@ -1,0 +1,29 @@
+<app-home-layout>
+    <div class="project-details">
+      <h3>{{ project?.name }}</h3>
+      <p>Start Date: {{ project?.startDate | date }}</p>
+      <p>End Date: {{ project?.endDate | date }}</p>
+    </div>
+  
+    <div class="task-columns">
+      <div class="task-column">
+        <h4>New</h4>
+        <div *ngFor="let task of newTasks">
+          <p>{{ task.title }}</p>
+        </div>
+      </div>
+      <div class="task-column">
+        <h4>In Progress</h4>
+        <div *ngFor="let task of inProgressTasks">
+          <p>{{ task.title }}</p>
+        </div>
+      </div>
+      <div class="task-column">
+        <h4>Completed</h4>
+        <div *ngFor="let task of completedTasks">
+          <p>{{ task.title }}</p>
+        </div>
+      </div>
+    </div>
+  </app-home-layout>
+  

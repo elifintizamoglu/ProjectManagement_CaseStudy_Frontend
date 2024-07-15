@@ -1,0 +1,33 @@
+.project-details {
+  margin-bottom: 20px;
+}
+
+.task-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-column {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  
+  &:last-child {
+    margin-right: 0;
+  }
+
+  h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -37,8 +37,8 @@ export class ProjectsCardListComponent implements OnInit{
     })
   }
 
-  onSeeDetailsButtonClick(projectId: number) {
-    this.router.navigate(['/project/detail', projectId]);
+  onSeeTasksButtonClick(projectId: number) {
+    this.router.navigate(['/project/', projectId, 'tasks']);
   }
 
 }
