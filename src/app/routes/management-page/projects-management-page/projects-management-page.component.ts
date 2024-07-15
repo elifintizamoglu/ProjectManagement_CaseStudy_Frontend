@@ -4,7 +4,9 @@ import { HomeLayoutComponent } from "../../../shared/layouts/home-layout/home-la
 import { ProjectListComponent } from '../../../features/projects/project-list/project-list.component';
 import { ProjectsCardListComponent } from '../../../features/projects/projects-card-list/projects-card-list.component';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { TokenService } from '../../../features/token/token.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-projects-management-page',
@@ -16,9 +18,23 @@ import { RouterModule } from '@angular/router';
     ProjectsCardListComponent,
     ButtonComponent,
     RouterModule,
-],
+  ],
   templateUrl: './projects-management-page.component.html',
   styleUrl: './projects-management-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsManagementPageComponent { }
+export class ProjectsManagementPageComponent {
+
+  constructor(private tokenService: TokenService,
+    private router: Router,
+    private toastr: ToastrService,
+  ) { }
+
+  goToAddProjectPage() {
+    if (this.tokenService.isLoggedIn()) {
+      this.router.navigate(['/projects/create']);
+    } else {
+      this.toastr.warning('Please login to be able to add project.');
+    }
+  }
+}

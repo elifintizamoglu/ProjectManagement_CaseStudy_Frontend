@@ -18,6 +18,8 @@ export class ButtonComponent {
   @Output() click = new EventEmitter<MouseEvent>();
 
   onClick(event: MouseEvent) {
+    event.preventDefault();
+    event.stopPropagation();
     this.click.emit(event);
   }
 

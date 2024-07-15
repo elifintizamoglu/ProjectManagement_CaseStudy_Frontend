@@ -23,9 +23,8 @@
           </ng-container>
         </li>
         <li class="nav-item" *ngIf="tokenService.isLoggedIn()">
-          <div class="d-flex">
-            <app-button class="me-2" (click)="navigateToProfile()"><i class="fas fa-user"></i></app-button>
-            <app-button (click)="tokenService.logout()">Log Out</app-button>
+          <div class="d-flex align-items-center">
+            <app-button (click)="logout()">Log Out</app-button>
           </div>
         </li>
       </ul>

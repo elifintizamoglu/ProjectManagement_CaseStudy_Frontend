@@ -12,6 +12,7 @@ export const managementRoutes: Routes = [
     },
     {
         path: 'projects/create', // localhost:4200/projects/create
+        canActivate: [userGuard],
         component: AddProjectManagementPageComponent,
     },
     {
