@@ -71,7 +71,7 @@ export class TaskListComponent implements OnInit {
     if (this.tokenService.isLoggedIn()) {
       this.router.navigate(['project/' + this.projectId + '/tasks/edit/' + taskId]);
     } else {
-      this.toastr.warning('Please login to be able to delete this task.');
+      this.toastr.warning('Please login to be able to edit this task.');
     }
   }
 
@@ -93,7 +93,7 @@ export class TaskListComponent implements OnInit {
         }
       })
     } else {
-      this.toastr.warning('Please login to be able to edit this task.');
+      this.toastr.warning('Please login to be able to delete this task.');
     }
     
   }
