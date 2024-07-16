@@ -12,7 +12,7 @@
         <tbody>
             <tr
                 *ngFor="let project of projects | paginate: { itemsPerPage: itemsPerPage, currentPage: page }; let i = index">
-                <th scope="row">{{i + 1}}</th>
+                <th scope="row">{{ (page - 1) * itemsPerPage + i + 1}}</th>
                 <td>{{project.name}}</td>
                 <td>{{project.startDate | date}}</td>
                 <td>{{project.endDate | date}}</td>
