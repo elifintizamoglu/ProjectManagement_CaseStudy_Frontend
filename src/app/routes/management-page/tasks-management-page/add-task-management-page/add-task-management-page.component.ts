@@ -19,12 +19,11 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 })
 export class AddTaskManagementPageComponent {
 
-
-   projectId!: number;
+  projectId!: number;
 
   constructor(private route: ActivatedRoute,
     private change: ChangeDetectorRef,
-    private router : Router,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {

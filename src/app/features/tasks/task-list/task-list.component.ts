@@ -68,25 +68,34 @@ export class TaskListComponent implements OnInit {
   }
 
   updateTask(taskId: number) {
-
+    if (this.tokenService.isLoggedIn()) {
+      this.router.navigate(['project/' + this.projectId + '/tasks/edit/' + taskId]);
+    } else {
+      this.toastr.warning('Please login to be able to delete this task.');
+    }
   }
 
   deleteTask(taskId: number) {
-    this.tasksService.deleteTaskById({ id: taskId }).subscribe({
-      next: () => {
-        this.toastr.success('Task deleted succesfully.');
-      },
-      error: (error) => {
-        if (error.error && error.error.message) {
-          this.toastr.error(error.error.message);
-        } else {
-          this.toastr.error('An unexpected error occurred. Please try again.');
+    if (this.tokenService.isLoggedIn()) {
+      this.tasksService.deleteTaskById({ id: taskId }).subscribe({
+        next: () => {
+          this.toastr.success('Task deleted succesfully.');
+        },
+        error: (error) => {
+          if (error.error && error.error.message) {
+            this.toastr.error(error.error.message);
+          } else {
+            this.toastr.error('An unexpected error occurred. Please try again.');
+          }
+        },
+        complete: () => {
+          this.getTasksByProjectId(this.projectId);
         }
-      },
-      complete: () => {
-        this.getTasksByProjectId(this.projectId);
-      }
-    })
+      })
+    } else {
+      this.toastr.warning('Please login to be able to edit this task.');
+    }
+    
   }
 
   goToAddTaskPage() {

@@ -4,6 +4,7 @@ import { AddProjectManagementPageComponent } from './projects-management-page/ad
 import { userGuard } from '../../shared/guards/user.guard';
 import { TasksManagementPageComponent } from './tasks-management-page/tasks-management-page.component';
 import { AddTaskManagementPageComponent } from './tasks-management-page/add-task-management-page/add-task-management-page.component';
+import { EditTaskManagementPageComponent } from './tasks-management-page/edit-task-management-page/edit-task-management-page.component';
 
 
 export const managementRoutes: Routes = [
@@ -23,6 +24,10 @@ export const managementRoutes: Routes = [
     {
         path: 'project/:projectId/tasks/create', // localhost:4200/project/detail/1/tasks/create
         component: AddTaskManagementPageComponent,  
+    },
+    {
+        path: 'project/:projectId/tasks/edit/:taskId', // localhost:4200/project/detail/1/tasks/create
+        component: EditTaskManagementPageComponent,  
     },
     
 ];
