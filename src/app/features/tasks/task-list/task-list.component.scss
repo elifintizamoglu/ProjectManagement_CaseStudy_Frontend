@@ -7,16 +7,21 @@
   flex: 1;
   padding: 10px;
   border-radius: 5px;
+  height: 70vh;
 }
 
 .new-tasks {
-  background-color: #ffcccb;
+  background-color: #f7b8b7;
 }
 
 .in-progress-tasks {
-  background-color: #fff8b3;
+  background-color: #fff495;
 }
 
 .completed-tasks {
-  background-color: #d4edda;
+  background-color: #9ff5b3;
+}
+
+.column-header {
+  text-align: center;
 }
