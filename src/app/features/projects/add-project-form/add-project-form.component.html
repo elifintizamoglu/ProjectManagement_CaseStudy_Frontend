@@ -1,23 +1,22 @@
 <div class="page-container">
-    <form [formGroup]="form" class="form-container m-5 mt-2">
-      <div>
-        <label for="nameInput"><b>Project Name:</b></label>
-      </div>
-      <input formControlName="name" type="text" id="nameInput" class="form-input" />
-  
-      <div>
-        <label><b>Start Date:</b></label>
-      </div>
-      <input type="date" [min]="minDate" formControlName="startDate" class="form-input" />
-  
-      <div>
-        <label><b>End Date:</b></label>
-      </div>
-      <input type="date" [min]="minDate" formControlName="endDate" class="form-input" />
-  
-      <div class="button-container">
-        <app-button type="submit" (click)="onFormSubmit()"> Add </app-button>
-      </div>
-    </form>
-  </div>
-  
+  <form [formGroup]="form" class="form-container m-5 mt-2">
+    <div>
+      <label for="nameInput"><b>Project Name:</b></label>
+    </div>
+    <input formControlName="name" type="text" id="nameInput" class="form-input" />
+
+    <div>
+      <label><b>Start Date:</b></label>
+    </div>
+    <input type="date" [min]="minDate" formControlName="startDate" class="form-input" />
+
+    <div>
+      <label><b>End Date:</b></label>
+    </div>
+    <input type="date" [min]="minDate" formControlName="endDate" class="form-input" />
+
+    <div class="button-container">
+      <app-button type="submit" (click)="onFormSubmit()"> Add </app-button>
+    </div>
+  </form>
+</div>
