@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  
+  border-spacing: 0 10px; /* Sütunlar arası boşluk için */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f8f8;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}

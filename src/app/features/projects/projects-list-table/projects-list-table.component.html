@@ -1,0 +1,31 @@
+<div class="m-5 mt-2">
+    <table appTable>
+        <thead>
+            <tr>
+                <th scope="col"> </th>
+                <th scope="col">Project Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let project of projects | paginate: { itemsPerPage: itemsPerPage, currentPage: page }; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{project.name}}</td>
+                <td>{{project.startDate | date}}</td>
+                <td>{{project.endDate | date}}</td>
+                <td>
+                    <div class="d-flex justify-content-end">
+                        <app-button [routerLink]="['/project/', project.id , 'tasks']" variant="primary">See
+                            Tasks</app-button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination-container">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

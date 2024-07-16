@@ -7,6 +7,7 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
 import { Router, RouterModule } from '@angular/router';
 import { TokenService } from '../../../features/token/token.service';
 import { ToastrService } from 'ngx-toastr';
+import { ProjectsListTableComponent } from '../../../features/projects/projects-list-table/projects-list-table.component';
 
 @Component({
   selector: 'app-projects-management-page',
@@ -18,6 +19,7 @@ import { ToastrService } from 'ngx-toastr';
     ProjectsCardListComponent,
     ButtonComponent,
     RouterModule,
+    ProjectsListTableComponent,
   ],
   templateUrl: './projects-management-page.component.html',
   styleUrl: './projects-management-page.component.scss',
