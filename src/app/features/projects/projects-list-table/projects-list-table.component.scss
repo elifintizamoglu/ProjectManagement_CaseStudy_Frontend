@@ -1,10 +1,10 @@
 table {
   width: 100%;
-  
-  border-spacing: 0 10px; /* Sütunlar arası boşluk için */
+  border-spacing: 0 10px;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: center;
 }
@@ -15,6 +15,14 @@ th {
 
 td {
   background-color: #ffffff;
+}
+
+td:nth-child(4) {
+  width: 20%;
+}
+
+td:nth-child(5) {
+  width: 25%;
 }
 
 .pagination-container {

@@ -18,10 +18,12 @@
                 <td>{{project.endDate | date}}</td>
                 <td>
                     <div class="d-flex justify-content-end">
-                        <app-button [routerLink]="['/project/', project.id , 'tasks']" variant="primary">See
-                            Tasks</app-button>
+                        <app-button (click)="onEdit(project.id!)" variant="warning" class="me-2">Edit</app-button>
+                        <app-button variant="danger" class="me-2" (click)="onDelete(project.id!)">Delete</app-button>
+                        <app-button [routerLink]="['/project/', project.id , 'tasks']" variant="primary">See Tasks</app-button>
                     </div>
                 </td>
+
             </tr>
         </tbody>
     </table>

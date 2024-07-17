@@ -36,7 +36,7 @@ export class ProjectsManagementPageComponent {
     if (this.tokenService.isLoggedIn()) {
       this.router.navigate(['/project/create']);
     } else {
-      this.toastr.warning('Please login to be able to add a project.');
+      this.toastr.warning('Please login to add a project.');
     }
   }
 }
